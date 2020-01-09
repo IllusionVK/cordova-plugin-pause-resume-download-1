@@ -44,7 +44,7 @@ module.exports = function(context) {
 
     //--------------------Android-------------------
     if (context.opts.cordova.platforms.indexOf("android") !== -1) {
-        var targetDir = path.join(projectRoot, "platforms", "android", "src", "org", "apache", "cordova", "filetransfer");
+        var targetDir = path.join(projectRoot, "platforms", "android", "app", "src", "main", "java", "org", "apache", "cordova", "filetransfer");
         var targetFiles = ["FileTransfer.java"];
         var tmpls = [{
             source: "outputStream = resourceApi.openOutputStream(targetUri);",
