@@ -4,9 +4,9 @@
  * @date 20160505
  */
 module.exports = function(context) {
-    var path = context.requireCordovaModule('path'),
-        fs = context.requireCordovaModule('fs'),
-        shell = context.requireCordovaModule('shelljs'),
+    var path = require('path'),
+        fs = require('fs'),
+        shell = require('shelljs'),
         projectRoot = context.opts.projectRoot,
         plugins     = context.opts.plugins || [];
 
@@ -17,10 +17,10 @@ module.exports = function(context) {
 
     var ConfigParser = null;
     try {
-        ConfigParser = context.requireCordovaModule('cordova-common').ConfigParser;
+        ConfigParser = require('cordova-common').ConfigParser;
     } catch(e) {
         // fallback
-        ConfigParser = context.requireCordovaModule('cordova-lib/src/configparser/ConfigParser');
+        ConfigParser = require('cordova-lib/src/configparser/ConfigParser');
     }
 
     var config      = new ConfigParser(path.join(context.opts.projectRoot, "config.xml")),
